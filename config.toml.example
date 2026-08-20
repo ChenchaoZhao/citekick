@@ -1,0 +1,5 @@
+[api]
+mailto = "you@example.com"
+openalex_api_key = ""
+semantic_scholar_api_key = ""
+ncbi_api_key = ""
