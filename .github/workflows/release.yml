@@ -15,8 +15,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install hatch
-        run: pip install hatch
+      - name: Install hatch and plugins
+        run: pip install hatch hatch-pip-compile
 
       - name: Build
         run: hatch build
