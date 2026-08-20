@@ -12,21 +12,22 @@ The search engine must be usable by LLM agents directly, so the core is exposed 
 
 ### Acceptance Criteria
 
-- [ ] A `paper-search` CLI exists, runnable via hatch, that accepts a query string (e.g. `hatch run paper-search "Hamiltonian Monte Carlo"`).
-- [ ] The search is exposed as a Model Context Protocol (MCP) server over stdio with a `search_papers` tool that accepts the same query parameters as the CLI, runnable via `hatch run paper-search-mcp`, so LLM agents can query literature directly.
-- [ ] The CLI and the MCP server share the same orchestration core; both query multiple literature sources behind a unified interface: Semantic Scholar, arXiv, PubMed, Crossref, Europe PMC, OpenReview, and DBLP (all free, keyless) plus OpenAlex (free account, per-request budget).
-- [ ] Sources are modeled as a `Source` enum, one member per source, with each member mapped to its search strategy (strategy pattern); adding a source requires only a new enum member and strategy, not CLI/orchestrator changes.
-- [ ] The CLI accepts a comma-separated list of sources (e.g. `--sources semantic-scholar,arxiv,pubmed`); when omitted it defaults to the keyless free sources (all except OpenAlex), and unknown source names fail with an explicit error.
-- [ ] Results from across sources are deduplicated (by DOI/title) and ranked by relevance and/or citation count.
-- [ ] Paper metadata is normalized to a common record: title, authors, year, DOI, abstract, source, and URL.
-- [ ] Output is emitted as structured JSON and as a Markdown reference list, with configurable limits (max results per source, year range).
-- [ ] [Edge Case] Source failures or rate limits are handled with retry/backoff and logging; the remaining sources continue and the run does not crash.
-- [ ] [Edge Case] A query with zero results returns an explicit empty-result message rather than failing silently.
-- [ ] Per-source API keys are configurable through the user TOML file `~/.config/paper-search/config.toml`, with no new CLI or MCP arguments: OpenAlex sends `api_key=` as a query param on `works` calls, Semantic Scholar sends `x-api-key` (case-sensitive) as a request header, and PubMed sends `api_key=` on both the `esearch` and `esummary` calls.
-- [ ] Every key is optional: a missing or empty key never fails a search — the source runs keyless exactly as before.
-- [ ] The optional `mailto` value in `~/.config/paper-search/config.toml` keeps working for arXiv (`user=`) and Crossref (`mailto=`); the retired OpenAlex `mailto` polite pool is not wired.
-- [ ] [Edge Case] Keys are read once at import time and never logged or serialized — not in cache payloads, debug output, or `SourceResult.error` messages.
-- [ ] A `config.toml.example` file at the repo root documents the user config schema with placeholder values and no real secrets.
+- [x] A `paper-search` CLI exists that accepts a query string.
+- [x] The search is exposed as a Model Context Protocol (MCP) server over stdio with a `search_papers` tool that accepts the same query parameters as the CLI, so LLM agents can query literature directly.
+- [x] The CLI and the MCP server share the same orchestration core; both query multiple literature sources behind a unified interface: Semantic Scholar, arXiv, PubMed, Crossref, Europe PMC, OpenReview, and DBLP (all free, keyless) plus OpenAlex (free account, per-request budget).
+- [x] Sources are modeled as a `Source` enum, one member per source, with each member mapped to its search strategy (strategy pattern); adding a source requires only a new enum member and strategy, not CLI/orchestrator changes.
+- [x] The CLI accepts a comma-separated list of sources (e.g. `--sources semantic-scholar,arxiv,pubmed`); when omitted it defaults to the keyless free sources (all except OpenAlex), and unknown source names fail with an explicit error.
+- [x] Results from across sources are deduplicated (by DOI/title) and ranked by relevance and/or citation count.
+- [x] Paper metadata is normalized to a common record: title, authors, year, DOI, abstract, source, and URL.
+- [x] Output is emitted as structured JSON and as a Markdown reference list, with configurable limits (max results per source, year range).
+- [x] [Edge Case] Source failures or rate limits are handled with retry/backoff and logging; the remaining sources continue and the run does not crash.
+- [x] [Edge Case] A query with zero results returns an explicit empty-result message rather than failing silently.
+- [x] Per-source API keys are configurable through the user TOML file `~/.config/paper-search/config.toml`, with no new CLI or MCP arguments: OpenAlex sends `api_key=` as a query param on `works` calls, Semantic Scholar sends `x-api-key` (case-sensitive) as a request header, and PubMed sends `api_key=` on both the `esearch` and `esummary` calls.
+- [x] Every key is optional: a missing or empty key never fails a search — the source runs keyless exactly as before.
+- [x] The optional `mailto` value in `~/.config/paper-search/config.toml` keeps working for arXiv (`user=`) and Crossref (`mailto=`); the retired OpenAlex `mailto` polite pool is not wired.
+- [x] [Edge Case] Keys are read once at import time and never logged or serialized — not in cache payloads, debug output, or `SourceResult.error` messages.
+- [x] A `config.toml.example` file at the repo root documents the user config schema with placeholder values and no real secrets.
+- [x] Agent configuration: Guide users to configure API keys in `~/.config/paper-search/config.toml` and integrate the `paper-search` MCP server into agent environments (e.g., opencode, Claude Desktop).
 
 ### Technical Notes and Implementation Hints
 

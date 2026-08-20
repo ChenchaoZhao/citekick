@@ -3,3 +3,11 @@ mailto = "you@example.com"
 openalex_api_key = ""
 semantic_scholar_api_key = ""
 ncbi_api_key = ""
+
+[search]
+sources = "arxiv,pubmed,crossref,europepmc,openreview,dblp"
+max_results = 10
+year_from = 2020
+year_to = 2024
+format = "json"
+no_cache = false

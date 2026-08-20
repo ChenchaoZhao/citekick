@@ -59,3 +59,17 @@ def test_missing_key_returns_none(tmp_path) -> None:
     api = _api(config_file)
 
     assert api.get("mailto") is None
+
+
+def test_loads_search_config_from_toml(tmp_path) -> None:
+    config_file = tmp_path / "config.toml"
+    config_file.write_text(
+        '[search]\nsources = "arxiv,pubmed"\nmax_results = 5\nyear_from = 2019\nyear_to = 2023\nformat = "markdown"\nno_cache = true\n'
+    )
+    search = config_module._load_search(config_file)  # noqa: SLF001
+    assert search["sources"] == "arxiv,pubmed"
+    assert search["max_results"] == 5
+    assert search["year_from"] == 2019
+    assert search["year_to"] == 2023
+    assert search["format"] == "markdown"
+    assert search["no_cache"] is True
