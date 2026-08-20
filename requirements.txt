@@ -3,6 +3,7 @@
 #
 # - pytest
 # - mypy
+# - rumdl
 # - fire
 # - loguru
 #
@@ -30,6 +31,8 @@ pluggy==1.6.0
 pygments==2.21.0
     # via pytest
 pytest==9.1.1
+    # via hatch.envs.default
+rumdl==0.2.58
     # via hatch.envs.default
 termcolor==3.3.0
     # via fire

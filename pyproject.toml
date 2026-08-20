@@ -23,11 +23,15 @@ path = "src/paper_search/__about__.py"
 type = "pip-compile"
 python = "3.12"
 path = ".venv"
-dependencies = ["pytest", "mypy"]
+dependencies = ["pytest", "mypy", "rumdl"]
 
 [tool.hatch.envs.default.scripts]
 typing = "mypy --install-types --non-interactive src/"
+docfmt = "rumdl check --fix ."
 release = ["hatch fmt", "typing", "hatch test --cover"]
+
+[tool.rumdl]
+extend-disable = ["MD013"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
