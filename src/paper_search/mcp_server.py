@@ -4,6 +4,12 @@ from __future__ import annotations
 
 from mcp.server.fastmcp import FastMCP
 
+from paper_search.config import (
+    DEFAULT_MAX_RESULTS_CONFIG,
+    DEFAULT_SOURCES_CONFIG,
+    DEFAULT_YEAR_FROM_CONFIG,
+    DEFAULT_YEAR_TO_CONFIG,
+)
 from paper_search.http import ResponseCache
 from paper_search.output import to_json
 from paper_search.search import DEFAULT_MAX_RESULTS_PER_SOURCE, year_range
@@ -18,8 +24,8 @@ _DEFAULT_SOURCES_VALUE: str = ",".join(source.value for source in DEFAULT_SOURCE
 @mcp.tool()
 async def search_papers(
     query: str,
-    sources: str = _DEFAULT_SOURCES_VALUE,
-    max_results_per_source: int = DEFAULT_MAX_RESULTS_PER_SOURCE,
+    sources: str | None = None,
+    max_results_per_source: int | None = None,
     year_from: int | None = None,
     year_to: int | None = None,
 ) -> str:
@@ -32,6 +38,17 @@ async def search_papers(
         year_from: Only include papers published in or after this year.
         year_to: Only include papers published in or before this year.
     """
+    if sources is None:
+        sources = DEFAULT_SOURCES_CONFIG if DEFAULT_SOURCES_CONFIG else _DEFAULT_SOURCES_VALUE
+    if max_results_per_source is None:
+        max_results_per_source = (
+            DEFAULT_MAX_RESULTS_CONFIG if DEFAULT_MAX_RESULTS_CONFIG is not None else DEFAULT_MAX_RESULTS_PER_SOURCE
+        )
+    if year_from is None:
+        year_from = DEFAULT_YEAR_FROM_CONFIG
+    if year_to is None:
+        year_to = DEFAULT_YEAR_TO_CONFIG
+
     selected = _parse_sources(sources)
     result = await search_papers_core(
         query,

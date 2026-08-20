@@ -92,3 +92,11 @@ def test_cli_passes_year_range_to_core(monkeypatch: Any) -> None:
 
     assert exit_code == 0
     assert seen["year_range"] == (2020, 2024)
+
+
+def test_cli_help_flag_does_not_prepend_search(monkeypatch: Any) -> None:
+    exit_code, _, stderr = _run_cli(["--help"], monkeypatch)
+
+    assert exit_code == 0
+    assert "search" in stderr
+    assert "config" in stderr

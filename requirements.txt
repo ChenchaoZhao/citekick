@@ -10,6 +10,7 @@
 # - loguru
 # - mcp<2,>=1.0
 # - tenacity
+# - tomli-w
 #
 
 annotated-types==0.8.0
@@ -118,6 +119,8 @@ tenacity==9.1.4
     # via hatch.envs.default
 termcolor==3.3.0
     # via fire
+tomli-w==1.2.0
+    # via hatch.envs.default
 typing-extensions==4.16.0
     # via
     #   anyio
