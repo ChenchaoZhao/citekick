@@ -1,6 +1,6 @@
 # Literature Search API Survey
 
-Web research survey (subagent research, Aug 2026) of candidate literature/paper query APIs for the `paper-search` tool. Verdicts are for this use case: a Python CLI run on a laptop with occasional batch queries.
+Web research survey (subagent research, Aug 2026) of candidate literature/paper query APIs for the `citekick` tool. Verdicts are for this use case: a Python CLI run on a laptop with occasional batch queries.
 
 ## Free and keyless (default sources)
 

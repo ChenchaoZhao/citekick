@@ -6,8 +6,8 @@ import asyncio
 
 import pytest
 
-from paper_search.sources import openalex
-from paper_search.sources.openalex import OPENALEX_URL, OpenAlexStrategy, _reconstruct_abstract
+from citekick.sources import openalex
+from citekick.sources.openalex import OPENALEX_URL, OpenAlexStrategy, _reconstruct_abstract
 
 PAYLOAD = {
     "results": [

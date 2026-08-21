@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from paper_search.config import MAILTO
-from paper_search.http import fetch_json
-from paper_search.paper import Paper
-from paper_search.sources.base import SearchStrategy, author_name, strip_jats, year_from_date_parts
+from citekick.config import MAILTO
+from citekick.http import fetch_json
+from citekick.paper import Paper
+from citekick.sources.base import SearchStrategy, author_name, strip_jats, year_from_date_parts
 
 CROSSREF_URL: str = "https://api.crossref.org/works"
 _SELECT: str = "DOI,title,author,issued,URL,abstract"

@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from paper_search.http import fetch_json
-from paper_search.paper import Paper
-from paper_search.sources.base import SearchStrategy, as_int, dblp_authors
+from citekick.http import fetch_json
+from citekick.paper import Paper
+from citekick.sources.base import SearchStrategy, as_int, dblp_authors
 
 DBLP_URL: str = "https://dblp.org/search/publ/api"
 

@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from paper_search.http import fetch_json
-from paper_search.paper import Paper
-from paper_search.sources.base import SearchStrategy, content_value, year_from_epoch_ms
+from citekick.http import fetch_json
+from citekick.paper import Paper
+from citekick.sources.base import SearchStrategy, content_value, year_from_epoch_ms
 
 OPENREVIEW_URL: str = "https://api2.openreview.net/notes/search"
 

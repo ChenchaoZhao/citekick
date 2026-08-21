@@ -6,8 +6,8 @@ import json
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from paper_search.paper import Paper
-    from paper_search.search import SearchResult
+    from citekick.paper import Paper
+    from citekick.search import SearchResult
 
 _AUTHOR_LIMIT: int = 10
 

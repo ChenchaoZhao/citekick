@@ -6,10 +6,10 @@ from typing import TYPE_CHECKING
 
 from defusedxml import ElementTree
 
-from paper_search.config import MAILTO
-from paper_search.http import fetch_text
-from paper_search.paper import Paper
-from paper_search.sources.base import SearchStrategy, year_from_iso
+from citekick.config import MAILTO
+from citekick.http import fetch_text
+from citekick.paper import Paper
+from citekick.sources.base import SearchStrategy, year_from_iso
 
 if TYPE_CHECKING:
     from xml.etree.ElementTree import Element

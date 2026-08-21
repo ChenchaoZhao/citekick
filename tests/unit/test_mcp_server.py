@@ -9,11 +9,11 @@ from typing import TYPE_CHECKING, Any
 
 import pytest
 
-from paper_search import mcp_server
-from paper_search.mcp_server import _parse_sources, mcp
-from paper_search.paper import Paper
-from paper_search.search import SearchResult, SourceResult
-from paper_search.sources import DEFAULT_SOURCES, Source
+from citekick import mcp_server
+from citekick.mcp_server import _parse_sources, mcp
+from citekick.paper import Paper
+from citekick.search import SearchResult, SourceResult
+from citekick.sources import DEFAULT_SOURCES, Source
 
 if TYPE_CHECKING:
     from collections.abc import Awaitable

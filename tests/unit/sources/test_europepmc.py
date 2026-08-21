@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import asyncio
 
-from paper_search.sources import europepmc
-from paper_search.sources.europepmc import EUROPE_PMC_URL, EuropePmcStrategy
+from citekick.sources import europepmc
+from citekick.sources.europepmc import EUROPE_PMC_URL, EuropePmcStrategy
 
 PAYLOAD = {
     "resultList": {

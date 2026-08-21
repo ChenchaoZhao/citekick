@@ -10,8 +10,8 @@ from typing import TYPE_CHECKING, Any
 if TYPE_CHECKING:
     import httpx
 
-    from paper_search.http import ResponseCache
-    from paper_search.paper import Paper
+    from citekick.http import ResponseCache
+    from citekick.paper import Paper
 
 
 class SearchError(Exception):

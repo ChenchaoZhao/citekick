@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from paper_search.sources.base import (
+from citekick.sources.base import (
     as_int,
     author_name,
     content_value,

@@ -1,10 +1,10 @@
-"""Integration test: run the paper-search CLI end-to-end against the live API."""
+"""Integration test: run the citekick CLI end-to-end against the live API."""
 
 from __future__ import annotations
 
 import json
 
-from paper_search import cli
+from citekick import cli
 
 
 def test_cli_searches_live_arxiv_api_and_emits_json(capsys) -> None:

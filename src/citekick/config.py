@@ -1,4 +1,4 @@
-"""User configuration loaded once at import time from ``~/.config/paper-search/config.toml``."""
+"""User configuration loaded once at import time from ``~/.config/citekick/config.toml``."""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ from typing import Any
 
 import tomli_w
 
-CONFIG_DIR: Path = Path.home() / ".config" / "paper-search"
+CONFIG_DIR: Path = Path.home() / ".config" / "citekick"
 CONFIG_PATH: Path = CONFIG_DIR / "config.toml"
 
 

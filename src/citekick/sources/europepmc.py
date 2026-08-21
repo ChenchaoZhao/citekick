@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from paper_search.http import fetch_json
-from paper_search.paper import Paper
-from paper_search.sources.base import SearchStrategy, as_int
+from citekick.http import fetch_json
+from citekick.paper import Paper
+from citekick.sources.base import SearchStrategy, as_int
 
 EUROPE_PMC_URL: str = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
 

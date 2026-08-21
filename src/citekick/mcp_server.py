@@ -4,19 +4,19 @@ from __future__ import annotations
 
 from mcp.server.fastmcp import FastMCP
 
-from paper_search.config import (
+from citekick.config import (
     DEFAULT_MAX_RESULTS_CONFIG,
     DEFAULT_SOURCES_CONFIG,
     DEFAULT_YEAR_FROM_CONFIG,
     DEFAULT_YEAR_TO_CONFIG,
 )
-from paper_search.http import ResponseCache
-from paper_search.output import to_json
-from paper_search.search import DEFAULT_MAX_RESULTS_PER_SOURCE, year_range
-from paper_search.search import search_papers as search_papers_core
-from paper_search.sources import DEFAULT_SOURCES, Source
+from citekick.http import ResponseCache
+from citekick.output import to_json
+from citekick.search import DEFAULT_MAX_RESULTS_PER_SOURCE, year_range
+from citekick.search import search_papers as search_papers_core
+from citekick.sources import DEFAULT_SOURCES, Source
 
-mcp = FastMCP("paper-search")
+mcp = FastMCP("citekick")
 
 _DEFAULT_SOURCES_VALUE: str = ",".join(source.value for source in DEFAULT_SOURCES)
 

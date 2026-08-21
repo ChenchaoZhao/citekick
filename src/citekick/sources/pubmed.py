@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from paper_search.config import NCBI_API_KEY
-from paper_search.http import fetch_json
-from paper_search.paper import Paper
-from paper_search.sources.base import SearchStrategy, year_from_pubdate
+from citekick.config import NCBI_API_KEY
+from citekick.http import fetch_json
+from citekick.paper import Paper
+from citekick.sources.base import SearchStrategy, year_from_pubdate
 
 _ESEARCH_URL: str = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
 _ESUMMARY_URL: str = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi"

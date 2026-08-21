@@ -14,7 +14,7 @@ from tenacity import retry, retry_if_exception, stop_after_attempt, wait_exponen
 _RETRIES: int = 3
 _RETRY_BACKOFF_MAX_SECONDS: float = 10.0
 DEFAULT_CACHE_TTL_SECONDS: int = 7 * 24 * 60 * 60
-_DEFAULT_CACHE_DIR: Path = Path.home() / ".cache" / "paper-search"
+_DEFAULT_CACHE_DIR: Path = Path.home() / ".cache" / "citekick"
 _RETRIABLE_STATUS_CODES: frozenset[int] = frozenset({408, 429, 500, 502, 503, 504})
 
 

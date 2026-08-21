@@ -1,4 +1,4 @@
-"""paper-search CLI."""
+"""citekick CLI."""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING, Any
 
 import fire  # type: ignore[import-untyped]
 
-from paper_search.config import (
+from citekick.config import (
     CONFIG_PATH,
     DEFAULT_FORMAT_CONFIG,
     DEFAULT_MAX_RESULTS_CONFIG,
@@ -18,10 +18,10 @@ from paper_search.config import (
     DEFAULT_YEAR_TO_CONFIG,
     update_config,
 )
-from paper_search.http import ResponseCache
-from paper_search.output import to_json, to_markdown
-from paper_search.search import DEFAULT_MAX_RESULTS_PER_SOURCE, search_papers, year_range
-from paper_search.sources import DEFAULT_SOURCES, Source
+from citekick.http import ResponseCache
+from citekick.output import to_json, to_markdown
+from citekick.search import DEFAULT_MAX_RESULTS_PER_SOURCE, search_papers, year_range
+from citekick.sources import DEFAULT_SOURCES, Source
 
 if TYPE_CHECKING:
     from collections.abc import Sequence
@@ -98,7 +98,7 @@ class CLI:
         format: str | None = None,  # noqa: A002
         no_cache: bool | None = None,  # noqa: FBT001
     ) -> None:
-        """Configure API keys and default search settings in ~/.config/paper-search/config.toml."""
+        """Configure API keys and default search settings in ~/.config/citekick/config.toml."""
         api_values: dict[str, str | None] = {
             k: v
             for k, v in {

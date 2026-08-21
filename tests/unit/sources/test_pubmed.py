@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import asyncio
 
-from paper_search.sources import pubmed
-from paper_search.sources.pubmed import PubmedStrategy
+from citekick.sources import pubmed
+from citekick.sources.pubmed import PubmedStrategy
 
 ESEARCH = {"esearchresult": {"idlist": ["123"]}}
 ESUMMARY = {

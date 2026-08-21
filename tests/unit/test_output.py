@@ -4,10 +4,10 @@ from __future__ import annotations
 
 import json
 
-from paper_search.output import to_json, to_markdown
-from paper_search.paper import Paper
-from paper_search.search import SearchResult, SourceResult
-from paper_search.sources import Source
+from citekick.output import to_json, to_markdown
+from citekick.paper import Paper
+from citekick.search import SearchResult, SourceResult
+from citekick.sources import Source
 
 
 def _sample_result() -> SearchResult:

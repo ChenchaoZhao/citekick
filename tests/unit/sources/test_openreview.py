@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import asyncio
 
-from paper_search.sources import openreview
-from paper_search.sources.openreview import OPENREVIEW_URL, OpenReviewStrategy
+from citekick.sources import openreview
+from citekick.sources.openreview import OPENREVIEW_URL, OpenReviewStrategy
 
 PAYLOAD = {
     "notes": [

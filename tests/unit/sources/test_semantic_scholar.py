@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import asyncio
 
-from paper_search.sources import semantic_scholar
-from paper_search.sources.semantic_scholar import SEMANTIC_SCHOLAR_URL, SemanticScholarStrategy
+from citekick.sources import semantic_scholar
+from citekick.sources.semantic_scholar import SEMANTIC_SCHOLAR_URL, SemanticScholarStrategy
 
 PAYLOAD = {
     "data": [
