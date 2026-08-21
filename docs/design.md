@@ -6,7 +6,7 @@ This project is refactored from a research project component.
 
 ## CLI and MCP server
 
-A literature search tool: query multiple sources, deduplicate and rank results, and emit structured output. This is the first research tool and only one of several planned for the project; it feeds directly into the literature review (ticket 001). Because more sources are expected later, the tool uses the **strategy pattern**: each source is an enum value registered to a concrete search strategy, so adding a source only means adding an enum member and its strategy, with no changes to the CLI or orchestrator.
+A literature search tool: query multiple sources, deduplicate and rank results, and emit structured output. Because more sources are expected later, the tool uses the **strategy pattern**: each source is an enum value registered to a concrete search strategy, so adding a source only means adding an enum member and its strategy, with no changes to the CLI or orchestrator.
 
 The search engine must be usable by LLM agents directly, so the core is exposed as a **Model Context Protocol (MCP) server** (stdio transport) with a `search_papers` tool; a thin `citekick` CLI wraps the same core for scripting and verification.
 
