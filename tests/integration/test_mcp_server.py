@@ -5,7 +5,7 @@ from __future__ import annotations
 import asyncio
 import json
 
-from paper_search.mcp_server import mcp
+from citekick.mcp_server import mcp
 
 
 def test_search_papers_tool_queries_live_arxiv_api() -> None:

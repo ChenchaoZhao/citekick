@@ -8,11 +8,11 @@ from typing import TYPE_CHECKING, Any
 
 import httpx
 
-from paper_search.sources import DEFAULT_SOURCES, SearchStrategy, Source
+from citekick.sources import DEFAULT_SOURCES, SearchStrategy, Source
 
 if TYPE_CHECKING:
-    from paper_search.http import ResponseCache
-    from paper_search.paper import Paper
+    from citekick.http import ResponseCache
+    from citekick.paper import Paper
 
 LOGGER = logging.getLogger(__name__)
 
@@ -86,7 +86,7 @@ async def search_papers(
             try:
                 found = await strategy.search(query, max_results=max_results_per_source)
             except Exception as exc:  # noqa: BLE001 - isolate one bad source
-                LOGGER.warning("paper-search: source %s failed: %s", source.label, exc)
+                LOGGER.warning("citekick: source %s failed: %s", source.label, exc)
                 per_source.append(SourceResult(source=source, error=str(exc)))
                 continue
             per_source.append(SourceResult(source=source, papers=found))

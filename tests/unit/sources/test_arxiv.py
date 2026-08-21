@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import asyncio
 
-from paper_search.sources import arxiv
-from paper_search.sources.arxiv import ARXIV_API_URL, ArxivStrategy
+from citekick.sources import arxiv
+from citekick.sources.arxiv import ARXIV_API_URL, ArxivStrategy
 
 ARXIV_XML = """<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:arxiv="http://arxiv.org/schemas/atom">

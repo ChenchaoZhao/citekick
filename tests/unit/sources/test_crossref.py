@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import asyncio
 
-from paper_search.sources import crossref
-from paper_search.sources.crossref import CROSSREF_URL, CrossrefStrategy
+from citekick.sources import crossref
+from citekick.sources.crossref import CROSSREF_URL, CrossrefStrategy
 
 PAYLOAD = {
     "message": {

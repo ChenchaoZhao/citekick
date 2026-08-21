@@ -8,11 +8,11 @@ from __future__ import annotations
 import asyncio
 from typing import TYPE_CHECKING, Any
 
-from paper_search.paper import Paper
-from paper_search.search import SearchResult, dedupe, rank, search_papers
-from paper_search.search import year_range as build_year_range
-from paper_search.sources import _STRATEGIES, Source
-from paper_search.sources.base import SearchStrategy
+from citekick.paper import Paper
+from citekick.search import SearchResult, dedupe, rank, search_papers
+from citekick.search import year_range as build_year_range
+from citekick.sources import _STRATEGIES, Source
+from citekick.sources.base import SearchStrategy
 
 if TYPE_CHECKING:
     from collections.abc import Awaitable

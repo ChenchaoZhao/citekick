@@ -10,7 +10,7 @@ from typing import Any
 import httpx
 import pytest
 
-from paper_search.http import (
+from citekick.http import (
     DEFAULT_CACHE_TTL_SECONDS,
     ResponseCache,
     _get,

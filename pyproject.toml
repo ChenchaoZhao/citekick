@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "paper-search"
+name = "citekick"
 dynamic = ["version", "license"]
 description = 'Paper search tool'
 readme = "README.md"
@@ -22,11 +22,11 @@ dependencies = [
 ]
 
 [project.scripts]
-paper-search = "paper_search.cli:main"
-paper-search-mcp = "paper_search.mcp_server:main"
+citekick = "citekick.cli:main"
+citekick-mcp = "citekick.mcp_server:main"
 
 [tool.hatch.version]
-path = "src/paper_search/__about__.py"
+path = "src/citekick/__about__.py"
 
 [tool.hatch.envs.default]
 type = "pip-compile"
@@ -47,7 +47,7 @@ extend-disable = ["MD013"]
 extend-select = ["T20"]
 
 [tool.ruff.lint.per-file-ignores]
-"src/paper_search/cli.py" = ["T201"]
+"src/citekick/cli.py" = ["T201"]
 "tests/**/*.py" = ["S101", "PLR2004"]
 
 [tool.pytest.ini_options]
@@ -55,7 +55,7 @@ testpaths = ["tests"]
 addopts = "--ignore=tests/integration"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/paper_search"]
+packages = ["src/citekick"]
 
 [tool.hatch.envs.hatch-test]
 features = []

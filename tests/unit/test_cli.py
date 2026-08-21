@@ -1,4 +1,4 @@
-"""Tests for the paper-search CLI."""
+"""Tests for the citekick CLI."""
 
 from __future__ import annotations
 
@@ -7,10 +7,10 @@ import json
 import sys
 from typing import Any
 
-from paper_search import cli
-from paper_search.paper import Paper
-from paper_search.search import SearchResult, SourceResult
-from paper_search.sources import Source
+from citekick import cli
+from citekick.paper import Paper
+from citekick.search import SearchResult, SourceResult
+from citekick.sources import Source
 
 
 def _run_cli(argv: list[str], monkeypatch: Any) -> tuple[int, str, str]:

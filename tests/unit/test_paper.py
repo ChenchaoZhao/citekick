@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from paper_search.paper import Paper
+from citekick.paper import Paper
 
 
 def test_paper_has_empty_defaults() -> None:

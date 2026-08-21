@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import asyncio
 
-from paper_search.sources import dblp
-from paper_search.sources.dblp import DBLP_URL, DblpStrategy
+from citekick.sources import dblp
+from citekick.sources.dblp import DBLP_URL, DblpStrategy
 
 PAYLOAD = {
     "result": {

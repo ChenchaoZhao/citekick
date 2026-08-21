@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from paper_search.config import OPENALEX_API_KEY
-from paper_search.http import fetch_json
-from paper_search.paper import Paper
-from paper_search.sources.base import SearchStrategy
+from citekick.config import OPENALEX_API_KEY
+from citekick.http import fetch_json
+from citekick.paper import Paper
+from citekick.sources.base import SearchStrategy
 
 OPENALEX_URL: str = "https://api.openalex.org/works"
 _DOI_PREFIX: str = "https://doi.org/"

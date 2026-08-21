@@ -1,11 +1,11 @@
-"""Unit tests for config.py: TOML loading from ~/.config/paper-search/config.toml."""
+"""Unit tests for config.py: TOML loading from ~/.config/citekick/config.toml."""
 
 from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-import paper_search.config as config_module
-from paper_search.config import _get, _load
+import citekick.config as config_module
+from citekick.config import _get, _load
 
 if TYPE_CHECKING:
     from pathlib import Path

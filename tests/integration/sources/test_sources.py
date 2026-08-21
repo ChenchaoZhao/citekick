@@ -12,7 +12,7 @@ import logging
 import httpx
 import pytest
 
-from paper_search.sources import Source
+from citekick.sources import Source
 
 QUERY = "Hamiltonian Monte Carlo"
 _TIMEOUT = httpx.Timeout(30.0)

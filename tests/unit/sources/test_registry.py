@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from paper_search.sources import DEFAULT_SOURCES, Source
+from citekick.sources import DEFAULT_SOURCES, Source
 
 
 def test_source_looks_up_by_name() -> None:

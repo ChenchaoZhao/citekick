@@ -1,31 +1,31 @@
-# paper-search
+# Citekick
 
 Agentic tools for academic paper search MCP and Skills
 
 ## Installation
 
-You can install the `paper-search` CLI and MCP server globally using `uv`:
+You can install the `citekick` CLI and MCP server globally using `uv`:
 
 ```bash
-uv tool install paper-search
+uv tool install citekick
 ```
 
 ## Configuration
 
 Credentials and the optional contact email are read from
-`~/.config/paper-search/config.toml`. Copy `config.toml.example` to that
+`~/.config/citekick/config.toml`. Copy `config.toml.example` to that
 location and replace the placeholder values. The `[api]` values are optional;
 missing or empty values leave the corresponding source keyless.
 
 ## Agent Integration
 
-To use `paper-search` as an MCP server, add this to your agent's MCP config:
+To use `citekick` as an MCP server, add this to your agent's MCP config:
 
 ```json
 {
   "mcpServers": {
-    "paper-search": {
-      "command": "paper-search-mcp"
+    "citekick": {
+      "command": "citekick-mcp"
     }
   }
 }
@@ -36,16 +36,10 @@ Or using `uvx` (without prior installation):
 ```json
 {
   "mcpServers": {
-    "paper-search": {
+    "citekick": {
       "command": "uvx",
-      "args": ["--from", "paper-search", "paper-search-mcp"]
+      "args": ["--from", "citekick", "citekick-mcp"]
     }
   }
 }
 ```
-
-## Usage
-
-OpenAlex retired its `mailto` polite pool in February 2026. Without an
-OpenAlex key, the service provides roughly 100 free credits per day before
-returning `429` or `409` responses.

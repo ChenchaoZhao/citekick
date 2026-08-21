@@ -4,15 +4,15 @@ from __future__ import annotations
 
 from enum import StrEnum
 
-from paper_search.sources.arxiv import ArxivStrategy
-from paper_search.sources.base import SearchError, SearchStrategy
-from paper_search.sources.crossref import CrossrefStrategy
-from paper_search.sources.dblp import DblpStrategy
-from paper_search.sources.europepmc import EuropePmcStrategy
-from paper_search.sources.openalex import OpenAlexStrategy
-from paper_search.sources.openreview import OpenReviewStrategy
-from paper_search.sources.pubmed import PubmedStrategy
-from paper_search.sources.semantic_scholar import SemanticScholarStrategy
+from citekick.sources.arxiv import ArxivStrategy
+from citekick.sources.base import SearchError, SearchStrategy
+from citekick.sources.crossref import CrossrefStrategy
+from citekick.sources.dblp import DblpStrategy
+from citekick.sources.europepmc import EuropePmcStrategy
+from citekick.sources.openalex import OpenAlexStrategy
+from citekick.sources.openreview import OpenReviewStrategy
+from citekick.sources.pubmed import PubmedStrategy
+from citekick.sources.semantic_scholar import SemanticScholarStrategy
 
 __all__ = ["DEFAULT_SOURCES", "SearchError", "SearchStrategy", "Source"]
 
